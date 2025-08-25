@@ -1,0 +1,16 @@
+.login-container{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background:#5a4fd4;padding:24px}
+.logo{font-size:52px;color:#fff;margin-bottom:24px;font-weight:800;letter-spacing:2px}
+.logo span{color:#6FE05D}
+.card{background:#fff;border-radius:8px;padding:28px 32px;min-width:360px;max-width:420px;width:100%;box-shadow:0 12px 34px rgba(0,0,0,.18)}
+.card h2{margin:0 0 20px 0;text-align:center;color:#333;font-weight:700}
+label{display:block;margin-top:12px;color:#474747;font-size:14px}
+input[type=email],input[type=password]{width:100%;padding:12px 14px;border:1px solid #cfd3df;border-radius:6px;margin-top:6px;outline:none}
+input[type=email]:focus,input[type=password]:focus{border-color:#6b63e6;box-shadow:0 0 0 3px rgba(107,99,230,.15)}
+button{width:100%;margin-top:18px;background:#6b63e6;color:#fff;border:none;padding:12px;border-radius:6px;cursor:pointer;font-weight:600}
+button[disabled]{opacity:.6;cursor:not-allowed}
+.links{display:flex;justify-content:space-between;margin-top:12px}
+.links a{font-size:12px;color:#6b63e6;text-decoration:none}
+.accept{display:flex;align-items:flex-start;gap:8px;margin-top:14px;font-size:12px;color:#555}
+.accept a{color:#6b63e6;text-decoration:none}
+.error{color:#d93025;font-size:12px;margin-top:4px}
+@media(max-width:480px){.card{min-width:unset;width:100%}}

@@ -1,0 +1,49 @@
+<div class="login-container">
+  <div class="logo">CERO <span>DRX</span></div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card">
+    <h2>Register</h2>
+
+    <div class="banner" *ngIf="successMessage" aria-live="polite">{{ successMessage }}</div>
+    <div class="error" *ngIf="errorMessage" aria-live="polite">{{ errorMessage }}</div>
+
+    <div class="grid">
+      <div class="col">
+        <label>First Name</label>
+        <input type="text" formControlName="firstName" placeholder="First Name" />
+        <div class="error" *ngIf="form.get('firstName')?.touched && form.get('firstName')?.invalid">Required</div>
+      </div>
+      <div class="col">
+        <label>Last Name</label>
+        <input type="text" formControlName="lastName" placeholder="Last Name" />
+        <div class="error" *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid">Required</div>
+      </div>
+    </div>
+
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="Email" />
+    <div class="error" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+      <span *ngIf="form.get('email')?.errors?.['required']">Required</span>
+      <span *ngIf="form.get('email')?.errors?.['email']">Invalid email</span>
+    </div>
+
+    <label>Mobile</label>
+    <input type="tel" formControlName="mobile" placeholder="Mobile" />
+    <div class="error" *ngIf="form.get('mobile')?.touched && form.get('mobile')?.invalid">Required</div>
+
+    <div class="grid">
+      <div class="col">
+        <label>Password</label>
+        <input type="password" formControlName="password" placeholder="Password" />
+        <div class="error" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">Required</div>
+      </div>
+      <div class="col">
+        <label>Confirm Password</label>
+        <input type="password" formControlName="confirm" placeholder="Confirm Password" />
+        <div class="error" *ngIf="form.errors?.['passwordMismatch'] && (form.get('confirm')?.touched || form.get('password')?.touched)">Passwords do not match</div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid || isSubmitting">{{ isSubmitting ? 'Submitting…' : 'Submit' }}</button>
+    <div class="links"><a [routerLink]="['/auth/login']">Back to login</a></div>
+  </form>
+</div>

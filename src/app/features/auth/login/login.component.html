@@ -1,0 +1,37 @@
+<div class="login-container">
+  <div class="logo">CERO <span>DRX</span></div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card">
+    <h2>Login</h2>
+
+    <label>Email</label>
+    <input type="email" formControlName="email" placeholder="Email" />
+    <div class="error" *ngIf="email?.touched && email?.invalid">
+      <span *ngIf="email?.errors?.['required']">Email is required.</span>
+      <span *ngIf="email?.errors?.['email']">Enter a valid email.</span>
+    </div>
+
+    <label>Password</label>
+    <input type="password" formControlName="password" placeholder="Password" />
+    <div class="error" *ngIf="password?.touched && password?.invalid">
+      <span>Password is required.</span>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid || submitting">{{ submitting ? 'Logging in...' : 'Login' }}</button>
+
+    <div class="error" *ngIf="loginError">{{ loginError }}</div>
+
+    <div class="links">
+      <a [routerLink]="['/auth/forgot-password']">Forgot Password</a>
+      <a [routerLink]="['/auth/signup']">Signup</a>
+    </div>
+
+    <label class="accept">
+      <input type="checkbox" formControlName="accept" />
+      <span>I accept <a [routerLink]="['/legal/terms']">Terms and Conditions</a> and <a [routerLink]="['/legal/privacy']">Privacy Policy</a></span>
+    </label>
+    <div class="error" *ngIf="accept?.touched && accept?.invalid">
+      You must accept the terms to continue.
+    </div>
+  </form>
+</div>
