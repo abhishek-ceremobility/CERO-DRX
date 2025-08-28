@@ -1,9 +1,9 @@
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.grid .col{display:flex;flex-direction:column}
-@media(max-width:600px){.grid{grid-template-columns:1fr}}
+// .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+// .grid .col{display:flex;flex-direction:column}
+// @media(max-width:600px){.grid{grid-template-columns:1fr}}
 
-/* tighten inputs to match design */
-.card h2{font-size:28px}
-label{font-size:14px;color:#474747}
-input{background:#fff}
-.banner{background:#e6f4ea;border:1px solid #a1d5b6;color:#0b6b2e;border-radius:6px;padding:10px 12px;margin-bottom:10px;font-size:13px}
+// /* tighten inputs to match design */
+// .card h2{font-size:28px}
+// label{font-size:14px;color:#474747}
+// input{background:#fff}
+// .banner{background:#e6f4ea;border:1px solid #a1d5b6;color:#0b6b2e;border-radius:6px;padding:10px 12px;margin-bottom:10px;font-size:13px}
